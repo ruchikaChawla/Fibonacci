@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fibonacci App</title>
+</head>
+<body>
+            <form method="GET">
+                <input type="search" placeholder="Enter Number For Fibonacci" name="value">
+                <button>Enter</button>
+            </form>
+            <div>
+                <p>Last Element in Fibonacci sequence : {{output}}</p>
+                <br/>
+                <p> Latency: {{latency}} ms</p>
+            </div>
+</body>
+</html>
