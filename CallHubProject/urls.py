@@ -17,6 +17,5 @@ from django.contrib import admin
 from django.urls import path
 from CallHubProject import fib
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('fib/', fib.FibonacciAPIView.as_view())
 ]

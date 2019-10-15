@@ -6,10 +6,6 @@ from django.shortcuts import render
 
 
 from django.shortcuts import render
-from django.template import RequestContext
-from django.http import HttpResponse, HttpResponseRedirect
-
-from .models import FibonacciApp
 from django.views import View
 import time
 
@@ -42,16 +38,9 @@ class FibonacciAPIView(View):
         else:
             start_time = time.time()
             numeric = int(number)
-            output = fibonacci(numeric)
+            output = str(fibonacci(numeric))
             end_time = time.time() - start_time
             latency = str(end_time)
-
-            fibonacci_qs = FibonacciApp.objects.create(
-                numeric=numeric,
-                output=output,
-                latency=latency
-            )
-            fibonacci_qs.save()
 
             data = {
                 'numeric': numeric,
